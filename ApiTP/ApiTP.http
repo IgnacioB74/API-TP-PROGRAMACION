@@ -1,0 +1,25 @@
+@ApiTP_HostAddress = http://localhost:5087
+
+### Registro de usuario
+POST {{ApiTP_HostAddress}}/api/ControlDeAuth/register
+Content-Type: application/json
+
+{
+    "mail": "usuario@ejemplo.com",
+    "contrasenia": "Password123!"
+}
+
+### Login
+POST {{ApiTP_HostAddress}}/api/ControlDeAuth/login
+Content-Type: application/json
+
+{
+    "email": "usuario@ejemplo.com",
+    "password": "Password123!"
+}
+
+### Obtener perfil de usuario (requiere token)
+GET {{ApiTP_HostAddress}}/api/User/profile
+Authorization: Bearer {{authToken}}
+
+###
